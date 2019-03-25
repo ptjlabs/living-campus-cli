@@ -6,7 +6,7 @@ import time
 
 
 
-__author__ = 'Preston Turner 1398857'
+__author__ = 'Preston Turner'
 
 parser = argparse.ArgumentParser(description='This Broker CLI will subscribe to local brokers and send its data to a db')
 parser.add_argument(
@@ -31,8 +31,8 @@ if __name__ == "__main__":
             print(m.topic)
             print(m.payload)
 
-            check = json.loads(m.payload)
-            print(check['message1'])
+            # check = json.loads(m.payload)
+            # print(check['message1'])
         except KeyboardInterrupt:
             print('\n Exiting program...')
             time.sleep(2)

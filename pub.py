@@ -20,6 +20,6 @@ while True:
     payload = json.dumps(payload)
 
 
-    publish.single("uh/cot/221/example",payload,hostname="172.26.55.100")
+    publish.single("<campus>/cot/221/example",payload,hostname="<ip-address>")
     print("data sent: {}".format(payload))
     time.sleep(1)
