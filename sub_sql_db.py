@@ -3,6 +3,7 @@ import json
 import argparse
 import sys
 import time
+import datetime
 
 
 
@@ -23,16 +24,28 @@ results = parser.parse_args()
 
 
 if __name__ == "__main__":
+    print('\n')
+    print('         Living Campus CLI                 ')
+    print('\n')
+    print('             (\__/)')
+    print('         ⠀   (•ㅅ•)     Preston setting up')
+    print('         ＿ノ ヽ ノ＼ __   A broker')
+    print('        /　`/ ⌒Ｙ⌒ Ｙ　ヽ')
+    print('       ( 　(三ヽ人　 /　 )')
+    print('       |　ﾉ⌒＼ ￣￣ヽ　 ノ')
+    print('       ヽ＿＿＿＞､＿＿_／')
+    print('　　       ｜( 王 ﾉ〈   (\__/)  everyone')
+    print('　　        /ﾐ`ー―彡\   (•ㅅ•)    else')
+    print('***************************************')
+    print(' This CLI will be updated periodically.')
+    print('Current Date: {}'.format(str(datetime.datetime.now()))) 
     while True:
         try:
             topic = results.topic
-
             m = subscribe.simple(topic, hostname=results.host,retained=False)
-            print(m.topic)
-            print(m.payload)
+            print('Message from: {} '.format(m.topic))
+            print('Data: {} '.format(m.payload))
 
-            # check = json.loads(m.payload)
-            # print(check['message1'])
         except KeyboardInterrupt:
             print('\n Exiting program...')
             time.sleep(2)
